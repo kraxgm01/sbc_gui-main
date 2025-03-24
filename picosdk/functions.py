@@ -20,7 +20,8 @@ def adc2mV(bufferADC, range, maxADC):
 
     channelInputRanges = [10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000]
     vRange = channelInputRanges[range]
-    bufferV = [(x * vRange) / maxADC.value for x in bufferADC]
+    # bufferV = [(x * vRange) / maxADC.value for x in bufferADC]
+    bufferV = [(float(x) * vRange) / maxADC.value for x in bufferADC]
 
     return bufferV
 	
